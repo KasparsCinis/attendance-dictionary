@@ -1,12 +1,31 @@
-DROP TABLE IF EXISTS attendance;
-CREATE TABLE attendance(
+SELECT * FROM pg_available_extensions WHERE name = 'uuid-oss';
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+SELECT * FROM pg_extension;
+
+DROP TABLE IF EXISTS dictionary;
+CREATE TABLE dictionary(
   uid UUID DEFAULT uuid_generate_v4() PRIMARY KEY NOT NULL,
-  app_user_uid UUID NOT NULL,
-  lesson_uid UUID NOT NULL
+  word VARCHAR(50) NOT NULL,
+  description VARCHAR(5000) NOT NULL
 );
 
-DROP TABLE IF EXISTS lesson_code;
-CREATE TABLE lesson_code(
-  lesson_uid UUID DEFAULT uuid_generate_v4() PRIMARY KEY NOT NULL,
-  code VARCHAR(10) NOT NULL
-);
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105101', 'it', 'the development, implementation, and maintenance of computer hardware and software systems to organize and communicate information electronically');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105102', 'computer', 'a programmable electronic device designed to accept data, perform prescribed mathematical and logical operations at high speed, and display the results of these operations. Mainframes, desktop and laptop computers, tablets, and smartphones are some of the different types of computers');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105103', 'table', 'an article of furniture consisting of a flat, slablike top supported on one or more legs or other supports');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105104', 'display', 'the visual representation of the output of an electronic device');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105105', 'bicycle', 'a vehicle with two wheels in tandem, usually propelled by pedals connected to the rear wheel by a chain, and having handlebars for steering and a saddlelike seat');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105106', 'microwave', 'an electromagnetic wave of extremely high frequency, 1 GH3 or more, and having wavelengths of from 1 mm to 30 cm');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105107', 'plane', 'a flat or level surface');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105108', 'tree', 'a plant having a permanently woody main stem or trunk, ordinarily growing to a considerable height, and usually developing branches at some distance from the ground');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105109', 'grass', 'any plant of the family Gramineae, having jointed stems, sheathing leaves, and seedlike grains.Compare grass family');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105110', 'sky', 'the region of the clouds or the upper air; the upper atmosphere of the earth');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105111', 'development', 'the act or process of developing; growth; progress');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105112', 'technology', 'the branch of knowledge that deals with the creation and use of technical means and their interrelation with life, society, and the environment, drawing upon such subjects as industrial arts, engineering, applied science, and pure science');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105113', 'software', ' Computers. the programs used to direct the operation of a computer, as well as documentation giving instructions on how to use them');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105114', 'hardware', 'the mechanical equipment necessary for conducting an activity, usually distinguished from the theory and design that make the activity possible');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105115', 'peanut', 'he pod or the enclosed edible seed of the plant, Arachis hypogaea, of the legume family: the pod is forced underground in growing, where it ripens.');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105116', 'phone', 'a portable electronic telephone device, as a cell phone, mobile phone, or smartphone');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105117', 'database', 'a comprehensive collection of related data organized for convenient access, generally in a computer');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105118', 'server', 'a person who serves');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105119', 'monolith', 'an obelisk, column, large statue, etc., formed of a single block of stone');
+INSERT INTO dictionary VALUES ('78038aeb-cdc9-4673-990e-36b8c1105120', 'android', 'an automaton in the form of a human being');
