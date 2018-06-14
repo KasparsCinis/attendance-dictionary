@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS attendance;
+CREATE TABLE attendance(
+  uid UUID DEFAULT uuid_generate_v4() PRIMARY KEY NOT NULL,
+  app_user_uid UUID NOT NULL,
+  lesson_uid UUID NOT NULL
+);
+
+DROP TABLE IF EXISTS lesson_code;
+CREATE TABLE lesson_code(
+  lesson_uid UUID DEFAULT uuid_generate_v4() PRIMARY KEY NOT NULL,
+  code VARCHAR(10) NOT NULL
+);
